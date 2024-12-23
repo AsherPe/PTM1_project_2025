@@ -1,4 +1,5 @@
-package graph;
+package test;
+
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 

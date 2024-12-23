@@ -1,4 +1,4 @@
-package graph;
+package test;
 import java.util.Date;
 
 public final class Message {
@@ -7,13 +7,13 @@ public final class Message {
     public final double asDouble;
     public final Date date;
 
-    public Message(String str) { //constructor
-        if (str == null) {
+    public Message(String asText) { //constructor
+        if (asText == null) {
             throw new IllegalArgumentException("String cannot be null");
         }
-        this.data = str.getBytes();
-        this.asText = str;
-        this.asDouble = parseDoubleSafely(str);
+        this.data = asText.getBytes();
+        this.asText = asText;
+        this.asDouble = trypars(asText);
         this.date = new Date();
     }
 
@@ -25,7 +25,7 @@ public final class Message {
         this(Double.toString(d));
     }
 
-    private static double parseDoubleSafely(String str) {
+    private static double trypars(String str) {
         try {
             return Double.parseDouble(str);
         } catch (NumberFormatException e) {
